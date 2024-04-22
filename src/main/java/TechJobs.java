@@ -119,7 +119,18 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        if (someJobs.isEmpty()){
+            System.out.print("No Results");
+        } else {
+            for (HashMap<String, String> job : someJobs) {
+                System.out.println("\n*****"); // This prints a separating line between every job(hashmap) in someJobs(arrayList) then..
 
-        System.out.println("printJobs is not implemented yet");
+                for (Map.Entry<String, String> entry : job.entrySet()) {
+                    System.out.println(entry.getKey() + ": " + entry.getValue()); // This prints the key + value of every Entry in the job(HashMap), prints the key + ":" + value
+                }
+
+                System.out.println("*****"); // prints an additional separating line after the last key and value of the job hashmap
+            }
+        }
     }
 }
